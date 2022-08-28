@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:pokedex/consts/consts_app.dart';
-import 'package:pokedex/models/pokeAPI.dart';
+import 'package:pokedex/models/pokeapi.dart';
 import 'package:pokedex/pages/home_page/widgets/app_bar_home.dart';
 import 'package:pokedex/store/pokeapi_store.dart';
 
@@ -59,8 +59,8 @@ class _HomePageState extends State<HomePage> {
                           ? ListView.builder(
                               itemCount: _pokeApi.pokemon?.length,
                               itemBuilder: (context, index) {
-                                return const ListTile(
-                                  title: Text('teste'),
+                                return ListTile(
+                                  title: Text(_pokeApi.pokemon![index].name!),
                                 );
                               },
                             )
